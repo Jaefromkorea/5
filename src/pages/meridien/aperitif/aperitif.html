@@ -1,0 +1,62 @@
+<!--
+  Generated template for the AperitifPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Le Meridien</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+ <form (ngSubmit)="sendOrder()">
+  
+    <ion-list>
+      <ion-item-group *ngFor="let drinkType of drinks; let i = index">
+    
+        <ion-item-divider sticky>
+        {{ drinkType.type }}
+        </ion-item-divider>
+      <ion-row>
+        <ng-template ngFor let-drink [ngForOf]="drinkType.list" let-j="index">
+          <ion-col width-80>
+            <div class="customAccDesc">
+              <span>
+                <strong> {{ drink.name }}</strong>
+                  <small>
+                    {{ drink.explanation }}
+                  </small>
+                </span>
+              </div>
+          </ion-col>
+
+          <ion-col width-20>
+            <div class="customAccAmt">
+              <span>
+                <ion-select class="select-qty" [(ngModel)]="drink.quantity" [ngModelOptions]="{standalone: true}">
+                  <ion-option *ngFor="let qty of [0,1,2,3,4,5,6,7,8,9]">{{ qty }}</ion-option>
+                </ion-select>
+              </span>
+            </div>
+          </ion-col>
+          
+        </ng-template>
+      </ion-row>
+      </ion-item-group>
+
+    </ion-list>
+    
+    
+    <button ion-button type="submit" block [disabled]="checkOrder()">Send order</button>
+  </form>
+
+
+
+</ion-content>

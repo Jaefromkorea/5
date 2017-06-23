@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+  
+  <ion-header>
+    <ion-toolbar color="mlgreen">
+      <ion-title>APP'ERO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="outer-content">
+    <ion-list>
+      <ion-list-header>
+        Menu
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon" [ngStyle]="{'color':p.color}" class="mlmenuicon"></ion-icon>
+        <span class="mlmenuitem">{{p.title}}</span>
+      </button>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Account
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let p of logoutpages" (click)="logout()">
+        <ion-icon item-left [name]="p.icon" [ngStyle]="{'color':p.color}"></ion-icon>
+        <span class="mlmenuitem">{{p.title}}</span>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
