@@ -30,7 +30,7 @@ import { VinPage } from '../pages/meridien/vin/vin';
 
 
 
-
+import { Push } from '@ionic-native/push';
 
 //provider
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -114,6 +114,7 @@ export const firebaseConfig = {
     StatusBar,
     AuthServiceProvider,
     SplashScreen,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     
   ]

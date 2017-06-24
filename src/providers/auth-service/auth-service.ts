@@ -7,7 +7,7 @@ import { LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import * as firebase from 'firebase';
